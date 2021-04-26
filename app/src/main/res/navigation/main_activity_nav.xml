@@ -9,10 +9,23 @@
         android:id="@+id/additionFragment"
         android:name="com.sitare.simplecalculator.AdditionFragment"
         android:label="fragment_addition"
-        tools:layout="@layout/fragment_addition" />
+        tools:layout="@layout/fragment_addition" >
+        <action
+            android:id="@+id/additionToResult"
+            app:destination="@id/resultFragment" />
+    </fragment>
     <fragment
         android:id="@+id/multiplicationFragment"
         android:name="com.sitare.simplecalculator.MultiplicationFragment"
         android:label="fragment_multiplication"
-        tools:layout="@layout/fragment_multiplication" />
+        tools:layout="@layout/fragment_multiplication" >
+        <action
+            android:id="@+id/multiplicationToResult"
+            app:destination="@id/resultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.sitare.simplecalculator.ResultFragment"
+        android:label="fragment_result"
+        tools:layout="@layout/fragment_result" />
 </navigation>
