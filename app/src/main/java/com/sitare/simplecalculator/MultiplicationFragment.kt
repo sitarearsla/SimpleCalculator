@@ -18,7 +18,12 @@ class MultiplicationFragment : Fragment() {
     ): View? {
         _multiplyBinding = FragmentMultiplicationBinding.inflate(inflater, container, false)
         multiplyBinding.multiplicationButton.setOnClickListener {
-            Navigation.findNavController(it).navigate(R.id.multiplicationToResult)
+            val firstOperand = multiplyBinding.firstOperatorMultiplicationEditText.text.toString()
+            val secondOperand = multiplyBinding.secondOperatorMultiplicationEditText.text.toString()
+            val result = firstOperand.toInt() * secondOperand.toInt()
+            val pass = MultiplicationFragmentDirections.multiplicationToResult(result)
+            Navigation.findNavController(it).navigate(pass)
+
         }
         return multiplyBinding.root
     }

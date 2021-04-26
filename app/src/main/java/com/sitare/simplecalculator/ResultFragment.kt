@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.navArgs
 import com.sitare.simplecalculator.databinding.FragmentResultBinding
 
 class ResultFragment : Fragment() {
@@ -16,6 +17,9 @@ class ResultFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _resultBinding = FragmentResultBinding.inflate(inflater, container, false)
+        val bundle : ResultFragmentArgs by navArgs()
+        val result = bundle.result
+        resultBinding.resultTextView.text = result.toString()
         return resultBinding.root
     }
 }
